@@ -5,8 +5,12 @@ export default function App() {
         <div className="App">
             <h1>Soltice Sky</h1>
             <footer>
-                This app was created by <a href="#">Harleigh Gallant</a>and
-                open-sourced on <a href="#">Github</a>
+                This app was created by{' '}
+                <a href="https://github.com/Harweeeee">Harleigh Gallant</a>and
+                open-sourced on{' '}
+                <a href="https://github.com/Harweeeee/solsticesky-react">
+                    Github
+                </a>
             </footer>
         </div>
     )
