@@ -1,7 +1,16 @@
 import React from 'react'
 import './Weather.css'
+import axios from 'axios'
 
 export default function Weather() {
+    const apiKey = '2c8f992cd76a9e5483846f53b921753f'
+    let city = 'Sydney'
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+
+    function handleResponse(response) {
+        console.log(response)
+    }
+    axios.get(apiUrl).then(handleResponse)
     return (
         <div className="Weather">
             <header className="searchbar">
