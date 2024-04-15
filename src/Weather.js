@@ -32,7 +32,9 @@ export default function Weather() {
                     </div>
                     <div className="col-6 temp">°25</div>
                     <div className="col-12 primarypink">
-                        <p>C | F</p>
+                        <p>
+                            <strong>C</strong> | F
+                        </p>
                     </div>
                     <div className="col-12 secondarypink additionalinfo">
                         <div>Humidity: 30%</div>
