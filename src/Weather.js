@@ -4,7 +4,7 @@ import axios from 'axios'
 
 export default function Weather() {
     const apiKey = '2c8f992cd76a9e5483846f53b921753f'
-    let [city, setCity] = useState('')
+    let [city, setCity] = useState('Sydney')
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
     const [weatherData, setWeatherData] = useState({})
 
@@ -15,6 +15,7 @@ export default function Weather() {
                 wind: response.data.wind.speed,
                 humidity: response.data.main.humidity,
                 cityName: response.data.name,
+                description: response.data.weather[0].description,
             })
         })
     }
@@ -56,6 +57,9 @@ export default function Weather() {
                         <p className="datetime primarypink">
                             Sunday, 14th April 2024
                         </p>
+                    </div>
+                    <div className="col-12">
+                        <p className="condition">{weatherData.description}</p>
                     </div>
 
                     <div className="col-6 icon">
