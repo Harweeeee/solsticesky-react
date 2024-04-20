@@ -27,6 +27,7 @@ input {
 .inputcity {
     width: 70%;
     margin-right: 5px;
+    padding: 7px;
 }
 
 .submitbutton {
