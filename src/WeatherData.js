@@ -21,14 +21,10 @@ export default function WeatherData(props) {
                             {props.data.description}
                         </p>
                     </div>
-
-                    <div className="col-6 icon">
-                        <img src={props.data.iconUrl} alt="weather-icon" />
-                    </div>
-                    <div className="col-6 temp">°{props.data.temperature}</div>
-                    <div className="col-12 primarypink">
-                        <p>C</p>
-                    </div>
+                    <WeatherUnit
+                        celciustemp={props.data.temperature}
+                        icon={props.data.iconUrl}
+                    />
                     <div className="col-12 secondarypink additionalinfo">
                         <div>Humidity: {props.data.humidity}%</div>
                         <div>Wind: {props.data.wind} km/H</div>
