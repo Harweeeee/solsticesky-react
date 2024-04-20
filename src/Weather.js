@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './Weather.css'
 import axios from 'axios'
+import FormatDate from './FormatDate'
 
 export default function Weather() {
     const apiKey = '2c8f992cd76a9e5483846f53b921753f'
@@ -16,6 +17,9 @@ export default function Weather() {
                 humidity: response.data.main.humidity,
                 cityName: response.data.name,
                 description: response.data.weather[0].description,
+                date: new Date(response.data.dt * 1000),
+                iconUrl:
+                    'https://cdn-icons-png.flaticon.com/512/3052/3052783.png',
             })
         })
     }
@@ -55,18 +59,17 @@ export default function Weather() {
 
                     <div className="col-12">
                         <p className="datetime primarypink">
-                            Sunday, 14th April 2024
+                            <FormatDate date={weatherData.date} />
                         </p>
                     </div>
                     <div className="col-12">
-                        <p className="condition">{weatherData.description}</p>
+                        <p className="condition, text-capitalize">
+                            {weatherData.description}
+                        </p>
                     </div>
 
                     <div className="col-6 icon">
-                        <img
-                            src="https://cdn-icons-png.flaticon.com/512/3052/3052783.png"
-                            alt="weather-icon"
-                        />
+                        <img src={weatherData.iconUrl} alt="weather-icon" />
                     </div>
                     <div className="col-6 temp">°{weatherData.temperature}</div>
                     <div className="col-12 primarypink">
