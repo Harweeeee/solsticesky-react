@@ -3,6 +3,7 @@ import './Weather.css'
 import axios from 'axios'
 
 import WeatherData from './WeatherData'
+import WeatherForecast from './WeatherForecast'
 
 export default function Weather(props) {
     const apiKey = '2c8f992cd76a9e5483846f53b921753f'
@@ -24,6 +25,7 @@ export default function Weather(props) {
                     description: response.data.weather[0].description,
                     date: new Date(response.data.dt * 1000),
                     iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+                    coordinates: response.data.coord,
                 })
                 setReady(true)
             })
@@ -61,7 +63,14 @@ export default function Weather(props) {
                     ></input>
                 </form>
             </header>
-            {!ready ? <p>Loading...</p> : <WeatherData data={weatherData} />}
+            <main>
+                {!ready ? (
+                    <p>Loading...</p>
+                ) : (
+                    <WeatherData data={weatherData} />
+                )}
+            </main>
+            <WeatherForecast coordinates={weatherData.coordinates} />
         </div>
     )
 }

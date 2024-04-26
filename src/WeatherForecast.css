@@ -1,0 +1,22 @@
+.WeatherForecast {
+    text-align: center;
+    margin: 35px 0 50px 0;
+}
+
+.ForecastName {
+    color: #132743;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.ForecastIcon {
+    height: 60px;
+}
+
+.ForecastTemperature {
+    color: #407088;
+}
+
+.maxTemp {
+    font-weight: bold;
+}
