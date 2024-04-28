@@ -6,7 +6,7 @@ import WeatherData from './WeatherData'
 import WeatherForecast from './WeatherForecast'
 
 export default function Weather(props) {
-    const apiKey = '2c8f992cd76a9e5483846f53b921753f'
+    const apiKey = 'c175bae3803235f7565671c9cbcd0465'
     let [city, setCity] = useState('')
     const [weatherData, setWeatherData] = useState({})
     let [ready, setReady] = useState(false)
