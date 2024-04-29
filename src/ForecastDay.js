@@ -7,12 +7,12 @@ export default function ForecastDay(props) {
 
     function maxTemperature() {
         let temperature = Math.round(props.forecast.temp.max)
-        return `${temperature}`
+        return `${temperature}°`
     }
 
     function minTemperature() {
         let temperature = Math.round(props.forecast.temp.min)
-        return `${temperature}`
+        return `${temperature}°`
     }
 
     function day() {
@@ -30,21 +30,22 @@ export default function ForecastDay(props) {
         return days[day]
     }
 
+    let iconCode = props.forecast.weather[0].icon
+    let forecastIconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`
+
     return (
         <div className="ForecastDay">
-            <div className="row">
-                <div className="col, ForecastName">{day()}</div>
-                <div className="WeatherForecastIcon">
-                    <img
-                        className="ForecastIcon"
-                        src="https://images.vexels.com/media/users/3/205087/isolated/preview/a41d84a485d960a7d929fd95ece1acf1-weather-stroke-icon.png"
-                        alt="Forecast Icon"
-                    />
-                </div>
-                <div className="ForecastTemperature">
-                    <span className="maxTemp">{maxTemperature()}</span> | {''}
-                    <span className="minTemp">{minTemperature()}</span>
-                </div>
+            <div className="col ForecastName">{day()}</div>
+            <div className="WeatherForecastIcon">
+                <img
+                    className="ForecastIcon"
+                    src={forecastIconUrl}
+                    alt="Forecast Icon"
+                />
+            </div>
+            <div className="ForecastTemperature">
+                <span className="maxTemp">{maxTemperature()}</span> | {''}
+                <span className="minTemp">{minTemperature()}</span>
             </div>
         </div>
     )

@@ -53,8 +53,8 @@ export default function WeatherUnit(props) {
                             onClick={convertToCelcius}
                         >
                             C
-                        </a>
-                        {''}| <strong>F</strong>
+                        </a>{' '}
+                        | <strong>F</strong>
                     </p>
                 </div>
             </div>

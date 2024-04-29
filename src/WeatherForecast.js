@@ -17,10 +17,19 @@ export default function WeatherForecast(props) {
         setForecast(response.data.daily)
     }
 
-    axios.get(apiUrl).then(handleResponse)
+    if (!forecast) {
+        axios.get(apiUrl).then(handleResponse)
+        return null
+    }
     return (
         <div className="WeatherForecast">
-            <ForecastDay forecast={forecast} />
+            <div className="row">
+                {forecast.slice(0, 5).map((f) => (
+                    <div className="col">
+                        <ForecastDay forecast={f} />
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }
