@@ -17,6 +17,7 @@ export default function WeatherForecast(props) {
 
     useEffect(() => {
         if (props.coordinates) getForecast()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props.coordinates])
 
     function handleResponse(response) {
