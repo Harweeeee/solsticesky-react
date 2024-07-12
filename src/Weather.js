@@ -48,29 +48,44 @@ export default function Weather(props) {
 
     return (
         <div className="Weather">
-            <header className="searchbar">
+            <div>
+                <img
+                    src="/assets/solsticeblue.png"
+                    alt="Solstice Sky Logo"
+                    className="logo"
+                ></img>
+            </div>
+            <header className="searchBar">
                 <form id="inputform" onSubmit={handleSubmit}>
                     <input
-                        className="inputcity"
+                        className="inputCity"
                         type="text"
                         placeholder="Enter a city"
                         onChange={updateCity}
                     ></input>
                     <input
-                        className="submitbutton"
+                        className="submitButton"
                         type="submit"
-                        value="search"
+                        value="🔍"
                     ></input>
                 </form>
             </header>
-            <main>
-                {!ready ? (
-                    <p>Loading...</p>
-                ) : (
-                    <WeatherData data={weatherData} />
-                )}
+            <main className="weatherContentContainer">
+                <div className="row">
+                    <div className="col today">
+                        {!ready ? (
+                            <p>Loading...</p>
+                        ) : (
+                            <WeatherData data={weatherData} />
+                        )}
+                    </div>
+                    <div className="col forecast">
+                        <WeatherForecast
+                            coordinates={weatherData.coordinates}
+                        />
+                    </div>
+                </div>
             </main>
-            <WeatherForecast coordinates={weatherData.coordinates} />
         </div>
     )
 }

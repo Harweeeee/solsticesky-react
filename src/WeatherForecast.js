@@ -35,9 +35,11 @@ export default function WeatherForecast(props) {
     return (
         <div className="WeatherForecast">
             <div className="row">
-                {forecast.slice(0, 5).map((f) => (
-                    <div className="col">
-                        <ForecastDay forecast={f} />
+                {forecast.slice(0, 6).map((f) => (
+                    <div className="col-6 forecastCol">
+                        <div className="forecastItem">
+                            <ForecastDay forecast={f} />
+                        </div>
                     </div>
                 ))}
             </div>

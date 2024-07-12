@@ -18,20 +18,18 @@ export default function WeatherUnit(props) {
     if (unit === 'celcius') {
         return (
             <div className="celciusunit">
-                <div class="row">
-                    <div className="col-6 icon">
-                        <img src={props.icon} alt="weather-icon" />
-                    </div>
-                    <div className="col-6 temp">{props.celciustemp}°</div>
+                <div class="">
+                    <div className="temp">{props.celciustemp}°</div>
                     <div></div>
                     <p className="secondarypink">
-                        <strong>C</strong> |{' '}
+                        <strong>C</strong>
                         <a
                             className="templink"
                             href="/"
                             onClick={convertToFahrenheit}
                         >
-                            F
+                            {' '}
+                            | F
                         </a>
                     </p>
                 </div>
@@ -40,11 +38,8 @@ export default function WeatherUnit(props) {
     } else {
         return (
             <div className="fahrenheitunit">
-                <div class="row">
-                    <div className="col-6 icon">
-                        <img src={props.icon} alt="weather-icon" />
-                    </div>
-                    <div className="col-6 temp">{fahrenheitTemp}°</div>
+                <div class="">
+                    <div className="temp">{fahrenheitTemp}°</div>
                     <div></div>
                     <p className="secondarypink">
                         <a
@@ -52,9 +47,9 @@ export default function WeatherUnit(props) {
                             href="/"
                             onClick={convertToCelcius}
                         >
-                            C
+                            C |
                         </a>{' '}
-                        | <strong>F</strong>
+                        <strong>F</strong>
                     </p>
                 </div>
             </div>

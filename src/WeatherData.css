@@ -1,0 +1,27 @@
+.WeatherData {
+    text-align: center;
+}
+
+.searchedCity {
+    color: #ffdfd1;
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.weatherInfo {
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    padding: 10px 70px;
+}
+
+.condition {
+    font-size: 15px;
+}
+
+.additionalInfo {
+    font-weight: 500;
+}
